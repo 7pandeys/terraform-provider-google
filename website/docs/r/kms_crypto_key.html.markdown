@@ -123,10 +123,10 @@ The following arguments are supported:
   A template describing settings for new crypto key versions.
   Structure is [documented below](#nested_version_template).
 
-* `destroy_scheduled_duration` -
+* `lifecycle` -
   (Optional)
-  The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED.
-  If not specified at creation time, the default duration is 24 hours.
+  Lifecycle of crypto key.
+  Structure is [documented below](#nested_lifecycle).
 
 * `import_only` -
   (Optional)
@@ -148,6 +148,13 @@ The following arguments are supported:
 * `protection_level` -
   (Optional)
   The protection level to use when creating a version based on this template. Possible values include "SOFTWARE", "HSM", "EXTERNAL", "EXTERNAL_VPC". Defaults to "SOFTWARE".
+
+<a name="nested_lifecycle"></a>The `lifecycle` block supports:
+
+* `destroy_scheduled_duration` -
+  (Optional)
+  The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED.
+  If not specified at creation time, the default duration is 24 hours.
 
 ## Attributes Reference
 
